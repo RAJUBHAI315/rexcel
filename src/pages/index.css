@@ -1,0 +1,77 @@
+/* Floating toast style */
+.floating-toast {
+  position: absolute; /* Fixes the position on the viewport */
+  top: 70px; /* Adjust this value to control the vertical position */
+  right: 5px; /* Adjust this value to control the horizontal position */
+  z-index: 999; /* Ensure it appears above other content */
+}
+
+.home-container {
+  height: 100vh;
+}
+
+.upload-button-set {
+  padding: 45px;
+}
+
+.link-nav {
+  text-decoration: none;
+}
+
+.table-container {
+  height: 100vh;
+}
+
+/* Add a custom class to the table */
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Set the maximum height for the table body and enable scrolling */
+.custom-table tbody {
+  max-height: 200px; /* Set your desired fixed height here */
+  overflow-y: auto;
+}
+
+/* Make the table header fixed */
+.custom-table thead {
+  position: sticky;
+  top: 0;
+  background-color: #fff; /* Set the desired background color */
+}
+
+/* Style for the items per page dropdown */
+.items-per-page-select {
+  margin-left: 10px;
+}
+
+/* Style for the pagination container */
+.pagination-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+/* Style for the pagination buttons */
+.pagination-buttons {
+  display: flex;
+  align-items: center;
+}
+
+/* Style for individual pagination buttons */
+.pagination-button {
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+/* Set a fixed height for the table container */
+.table-container {
+  height: 100vh; /* Set your desired fixed height here */
+  overflow-y: auto;
+}
+
+.navbar a.nav-link {
+  text-decoration: none !important; /* Use !important to ensure specificity */
+}
