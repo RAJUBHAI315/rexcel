@@ -1,8 +1,11 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../Redux/Reducer/rootReducer";
 import { Table, Pagination, Form } from "react-bootstrap";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { AppDispatch } from "../Redux/store";
+import { failureDispatch } from "../Redux/Action/toastAction";
 
 interface IExcel {
   [key: string]: number | string;
@@ -18,6 +21,17 @@ export const Data = () => {
   const excelHead = useSelector((state: RootState) => state.excel);
   const tableHead: string[] = excelHead["header"];
   const tableData: IExcel[] = excelHead["body"];
+
+  const navigate = useNavigate();
+
+  const dispatch = useDispatch<AppDispatch>();
+
+  useEffect(() => {
+    if (tableHead.length === 0) {
+      navigate("/");
+      dispatch(failureDispatch("Please upload a File"));
+    }
+  });
 
   const location = useLocation();
 
